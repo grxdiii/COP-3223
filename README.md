@@ -1,2 +1,2 @@
 # cop3223
-Intro
+Intro to Programming with C - by Dr. Niels Da Vitoria Lobo
