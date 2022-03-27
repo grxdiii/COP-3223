@@ -1,7 +1,7 @@
 //  Gradi Tshielekeja Mbuyi
 //  COP 3223C Section 2
-//  Assignment #2 - Problem C: Menu
-//  Feb 19 2022
+//  Assignment #2 - Foodbank
+//  March 27 2022
 
 #include <stdio.h>
 #include <stdlib.h>
