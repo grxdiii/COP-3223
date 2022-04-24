@@ -67,6 +67,25 @@ struct node   *insertatbackinlist(struct node *l, struct node node1)
   return (l);
 }
 
+struct node *search(struct node *l, struct node node1)
+{
+  struct node *temp;
+
+  temp=NULL;
+
+  if (l==NULL){
+    printf("while searching, list began Empty\n");
+  }
+ 
+  while (l != NULL){
+    if (strcmp(l->donInvType,node1.donInvType) == 0)
+    {
+      temp = l;
+    }
+  }
+  return (temp);
+}
+
 void printlis(struct node *l)
 {
   if (l==NULL) printf("Empty\n");
