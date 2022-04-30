@@ -47,6 +47,9 @@ int main() {
     fscanf(f_input, "%d", &n);
     for(i = 0; i < n; i++){
         fscanf(f_input, "%s %s %lf", staff[i].first, staff[i].last, &staff[i].payperhr);
+        staff[i].gross = 0;
+        staff[i].taxes = 0;
+        staff[i].hours_in_week = 0;
     }
     
     // scans for the num of weeks
@@ -74,19 +77,19 @@ int main() {
         
         // save data of the "entry" employee
         for(j = 0; j < n; j++){
-            if(staff[j].hours_in_week <= 40.0){
+            if(staff[j].hours_in_week <= 40){
                 temp_gross = staff[j].hours_in_week * staff[j].payperhr;
                 
                 staff[j].gross += temp_gross;
                 staff[j].taxes += temp_gross * 0.10;
             }else{
-                staff[j].hours_in_week -= 40.0;
+                staff[j].hours_in_week -= 40;
                 temp_gross = staff[j].hours_in_week * 1.5 * staff[j].payperhr;
                 
                 staff[j].taxes += temp_gross * 0.20;
-                temp_gross += 40.0 * staff[j].payperhr;
+                temp_gross += 40 * staff[j].payperhr;
                 
-                staff[j].taxes += 40.0 * staff[j].payperhr * 0.10;
+                staff[j].taxes += 40 * staff[j].payperhr * 0.10;
                 
                 staff[j].gross += temp_gross;
             }
