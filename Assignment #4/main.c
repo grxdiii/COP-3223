@@ -25,8 +25,9 @@ int main() {
     struct employee staff[MAX_EMPL];
     
     // for-loop variables
-    int i, j, k;
-    int n, numweeks, numentry;
+    int i, j, k, n;
+    
+    int numweeks, numentry;
     
     char LastName[MAX_LEN], FirstName[MAX_LEN];
     
@@ -59,7 +60,7 @@ int main() {
             fscanf(f_input, "%s %s %d %d %d %d", LastName, FirstName, &HrIn, &MinIn, &HrOut, &MinOut);
             // calculate data of the "entry" employee
             for(k = 0; k < n; k++){
-                if((strcmp(LastName, staff[k].last)==0) && (strcmp(FirstName, staff[k].last)==0)){
+                if(strcmp(LastName, staff[k].last)==0 && strcmp(FirstName, staff[k].first)==0){
                     a = HrIn * 60 + MinIn;
                     b = HrOut * 60 + MinOut;
                     
@@ -90,7 +91,8 @@ int main() {
                 staff[j].gross += temp_gross;
             }
         }
-        // entry's end
+        
+        // end of entry
         for(j = 0; j < n; j++){
             staff[j].hours_in_week = 0;
         }
@@ -109,8 +111,7 @@ int main() {
         fprintf(f_output, "Net pay: %.2lf \n\n", staff[i].gross - staff[i].taxes);
     }
     
-    // close files & ends program
-    
+    //close files & end program
     fclose(f_input);
     fclose(f_output);
     
